@@ -1,0 +1,46 @@
+#################################################### 
+#   (c) Copyright Sisodream Inc.                   #
+#   All rights reserved.                           #
+#                                                  #
+#   Homepage : www.itsoc.kr / www.sisodream.com    #
+#   E-mail   : cyklboard@sisodream.com             #
+#################################################### 
+
+# Pin Map : uart
+
+# Clock
+NET clk LOC = V23;	# 3.6864MHz
+
+# Reset
+NET rst LOC = AF2;
+
+# Button for Tx
+NET button_A LOC = L20;	# Button A for data_i
+NET button_B LOC = L21;	# Button B for data_i
+
+#mode
+NET mode LOC = G24; #slide switch
+
+# LED 0 ~ 7
+NET led<0> LOC = G25;
+NET led<1> LOC = G26;
+NET led<2> LOC = F22;
+NET led<3> LOC = F24;
+NET led<4> LOC = F26;
+NET led<5> LOC = E23;
+NET led<6> LOC = E24;
+NET led<7> LOC = E25;
+
+# 7-Segment
+NET seg7_com_anode   	LOC = A23;      # 7SEG_DIG6
+NET seg7_top_hor  	LOC = B26;      # 7SEG_A 
+NET seg7_mid_hor  	LOC = E26;      # 7SEG_G 
+NET seg7_bot_hor  	LOC = D24;      # 7SEG_D 
+NET seg7_top_ver_left	LOC = B25;      # 7SEG_F 
+NET seg7_top_ver_right LOC = C24;      # 7SEG_B 
+NET seg7_bot_ver_left  LOC = D26;      # 7SEG_E 
+NET seg7_bot_ver_right LOC = D22;      # 7SEG_C
+
+# Clock contraints
+NET "clk" TNM_NET = TNM_clk;
+TIMESPEC "TS_clk" = PERIOD "TNM_clk"  25 ns;
